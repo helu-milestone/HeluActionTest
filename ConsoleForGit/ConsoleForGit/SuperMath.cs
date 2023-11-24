@@ -23,7 +23,7 @@ namespace ConsoleForGit
             int value1 = ValidateInput(valueStr1);
             int value2 = ValidateInput(valueStr2);
 
-            return value1 + value2;
+            return value1 - value2;
         }
 
         private int ValidateInput(string valueStr1)
