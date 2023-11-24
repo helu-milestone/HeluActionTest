@@ -43,7 +43,7 @@ jobs:
 
     # Build the solution
     - name: Build the solution
-      run: dotnet build ConsoleForGit\ConsoleForGit.sln -t:Restore  -p:Configuration=Release
+      run: dotnet build ${{ env.Solution_Path }} -t:Restore  -p:Configuration=${{ matrix.configuration }}
       #run: msbuild ${{ env.Solution_Path }} /t:restore /p:Configuration=${{ matrix.configuration }}
 
     # Execute all unit tests in the solution
