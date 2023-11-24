@@ -18,6 +18,7 @@ namespace ConsoleForGit
             return value1 + value2;
         }
 
+
         public int Add(string valueStr1, string valueStr2)
         {
             int value1 = ValidateInput(valueStr1);
