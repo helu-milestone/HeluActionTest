@@ -22,8 +22,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      Solution_Path: ConsoleForGit\ConsoleForGit.sln                                               
-      Test_Project_Path: ConsoleForGit\ConsoleForGitTest\ConsoleForGitTest.csproj                  
+      Solution_Path: ConsoleForGit/ConsoleForGit.sln                                               
+      Test_Project_Path: ConsoleForGit/ConsoleForGitTest/ConsoleForGitTest.csproj                  
 
     steps:
     - name: Checkout
