@@ -60,7 +60,7 @@ jobs:
 
     # Build the solution
     - name: Build the solution
-      run: msbuild ${{ env.Solution_Path }} /p:Configuration=${{ matrix.configuration }}
+      run: msbuild ${{ env.Solution_Path }} /t:restore /p:Configuration=${{ matrix.configuration }}
 
     # Execute all unit tests in the solution
     - name: Execute unit tests
