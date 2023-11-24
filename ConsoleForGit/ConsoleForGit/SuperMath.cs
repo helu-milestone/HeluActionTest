@@ -10,7 +10,7 @@ namespace ConsoleForGit
     {
         public int Sum(List<int> values)
         {
-            return values.Min();
+            return values.Sum();
         }
 
         public int Add(int value1, int value2)
