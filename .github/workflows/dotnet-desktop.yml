@@ -20,7 +20,7 @@
 # Next, use PowerShell to encode the .pfx file using Base64 encoding
 # by running the following Powershell script to generate the output string:
 
-name: .NET Core Desktop
+name: Branch protection
 
 on:
   push:
