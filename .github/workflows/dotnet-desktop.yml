@@ -39,7 +39,7 @@ jobs:
 
     # Build the solution
     - name: Build the solution
-      run: dotnet build ${{ env.Solution_Path }} -t:Restore  -p:Configuration=${{ matrix.configuration }}
+      run: dotnet build ${{ env.Solution_Path }} -t:Build  -p:Configuration=${{ matrix.configuration }}
       
     # Execute all unit tests in the solution
     - name: Execute unit tests
@@ -48,8 +48,8 @@ jobs:
     # Store build solution
     - name: Store release solution
       if: matrix.configuration == 'Release'
-      run: echo 'this is 2 strange -' ${{ matrix.configuration }}
-    #  uses: actions/upload-artifact@v3
-    #  with:
-    #      name: release
-    #      if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
+    #  run: echo 'this is 2 strange -' ${{ matrix.configuration }}
+      uses: actions/upload-artifact@v3
+      with:
+        name: release
+        if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
