@@ -48,9 +48,24 @@ jobs:
     # Store build solution
     - name: Store release solution
       if: matrix.configuration == 'Release'
-    #  run: echo 'this is 2 strange -' ${{ matrix.configuration }}
       uses: actions/upload-artifact@v3
       with:
         name: release
         path: ConsoleForGit/ConsoleForGit/bin/Release/net6.0
         if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
+
+    # Create package
+    - name: Store release solution
+      if: matrix.configuration == 'Release'
+      run: dotnet pack ${{ env.Solution_Path }} -p:Configuration=Release
+      
+    # Store package
+    - name: Store release solution
+      if: matrix.configuration == 'Release'
+      uses: actions/upload-artifact@v3
+      with:
+        name: NugetPackage
+        path: ConsoleForGit/ConsoleForGit/bin/Release/ConsoleForGit.1.0.0.nupkg
+        if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
+
+        
