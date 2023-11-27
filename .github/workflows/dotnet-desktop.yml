@@ -52,4 +52,5 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: release
+        path: ConsoleForGit/ConsoleForGit/bin/Release/net6.0
         if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
