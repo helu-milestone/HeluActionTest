@@ -26,6 +26,14 @@ namespace ConsoleForGit
             return value1 + value2;
         }
 
+        public int AddAgain(string valueStr1, string valueStr2)
+        {
+            int value1 = ValidateInput(valueStr1);
+            int value2 = ValidateInput(valueStr2);
+
+            return value1 + value2;
+        }
+
         private int ValidateInput(string valueStr1)
         {
             if(string.IsNullOrEmpty(valueStr1))
