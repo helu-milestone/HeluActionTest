@@ -46,8 +46,9 @@ jobs:
       run: dotnet test ${{ env.Test_Project_Path }}
 
     # Store build solution
-    - name: Store solution
+    - name: Store release solution
       if: ${{ matrix.configuration }} == 'Release'
-      run: echo "We should publish now"
-
-      
+      uses: actions/upload-artifact@v3
+      with:
+          name: release
+          if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
