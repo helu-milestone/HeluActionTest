@@ -48,7 +48,7 @@ jobs:
     # Store build solution
     - name: Store release solution
       if: ${{ matrix.configuration }} == 'Release'
-      run: echo 'this is strange -' + ${{ matrix.configuration }}
+      run: echo 'this is 2 strange -' ${{ matrix.configuration }}
     #  uses: actions/upload-artifact@v3
     #  with:
     #      name: release
