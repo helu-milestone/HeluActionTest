@@ -48,7 +48,8 @@ jobs:
     # Store build solution
     - name: Store release solution
       if: ${{ matrix.configuration }} == 'Release'
-      uses: actions/upload-artifact@v3
-      with:
-          name: release
-          if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
+      run: echo 'this is strange -' + ${{ matrix.configuration }}
+    #  uses: actions/upload-artifact@v3
+    #  with:
+    #      name: release
+    #      if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
